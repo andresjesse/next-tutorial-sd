@@ -1,24 +1,37 @@
 import { GetStaticProps } from "next";
 
-import { prisma } from "../lib/prisma";
 import { Brand } from "@prisma/client";
+import { Table, Typography } from "antd";
+import { prisma } from "../lib/prisma";
+
+import type { ColumnsType } from "antd/es/table";
+
+const { Title } = Typography;
 
 interface BrandsProps {
   brands: Array<Brand>;
 }
 
+const columns: ColumnsType<Brand> = [
+  {
+    title: "Id",
+    dataIndex: "id",
+    key: "id",
+  },
+  {
+    title: "Name",
+    dataIndex: "name",
+    key: "name",
+  },
+];
+
 export default function Brands({ brands }: BrandsProps) {
   return (
     <div>
-      <h1>Brands Available</h1>
+      <Title level={3}>Brands Available</Title>
       <br />
 
-      {brands.map((brand, index) => (
-        <div key={index}>
-          <span>{brand.id}</span>
-          <span>{brand.name}</span>
-        </div>
-      ))}
+      <Table dataSource={brands} columns={columns} />
     </div>
   );
 }

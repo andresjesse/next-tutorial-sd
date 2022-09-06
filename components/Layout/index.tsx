@@ -28,7 +28,7 @@ export default function ApplicationLayout({
         <Menu items={items} mode="horizontal" theme="dark" />
       </Header>
 
-      <Content>{children}</Content>
+      <Content style={{ padding: "50px 50px" }}>{children}</Content>
 
       <Footer>SD Application Demo - 2022</Footer>
     </Layout>
