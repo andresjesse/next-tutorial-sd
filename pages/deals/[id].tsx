@@ -1,7 +1,6 @@
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import React from "react";
-import { fakeComputers, TComputer } from "../../services/fakeData";
 import { prisma } from "../../lib/prisma";
 import { Brand, Computer } from "@prisma/client";
 
