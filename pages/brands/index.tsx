@@ -2,7 +2,7 @@ import { GetStaticProps } from "next";
 
 import { Brand } from "@prisma/client";
 import { Table, Typography } from "antd";
-import { prisma } from "../lib/prisma";
+import { prisma } from "../../lib/prisma";
 
 import type { ColumnsType } from "antd/es/table";
 
