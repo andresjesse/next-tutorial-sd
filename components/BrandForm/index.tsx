@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, notification, Form, Input } from "antd";
 import axiosApi from "../../lib/axiosApi";
 
 export default function BrandForm() {
@@ -9,6 +9,11 @@ export default function BrandForm() {
     const response = await axiosApi.post("/api/brands/create", values);
 
     console.log(response);
+
+    notification.open({
+      message: "Created!",
+      description: "Brand created successfuly! id=" + response.data.id,
+    });
   };
 
   const onFinishFailed = (errorInfo: any) => {

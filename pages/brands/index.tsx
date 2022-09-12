@@ -6,7 +6,7 @@ import { prisma } from "../../lib/prisma";
 
 import type { ColumnsType } from "antd/es/table";
 
-const { Title } = Typography;
+const { Title, Text, Link } = Typography;
 
 interface BrandsProps {
   brands: Array<Brand>;
@@ -30,6 +30,10 @@ export default function Brands({ brands }: BrandsProps) {
     <div>
       <Title level={3}>Brands Available</Title>
       <br />
+
+      <Link href="/brands/new">
+        <Text>Create a new Brand</Text>
+      </Link>
 
       <Table
         dataSource={brands}
