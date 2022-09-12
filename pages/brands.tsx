@@ -31,7 +31,11 @@ export default function Brands({ brands }: BrandsProps) {
       <Title level={3}>Brands Available</Title>
       <br />
 
-      <Table dataSource={brands} columns={columns} />
+      <Table
+        dataSource={brands}
+        columns={columns}
+        rowKey={(record) => record.id.toString()}
+      />
     </div>
   );
 }
